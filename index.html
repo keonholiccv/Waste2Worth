@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waste2Worth ♻️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Waste2Worth ♻️</h1>
+    <p>Make your waste cooking oil into something worth that can make the world a better place!</p>
+
+    <!-- LOGIN SECTION -->
+    <div id="login-section">
+      <input id="name" type="text" placeholder="Enter your name" /><br>
+      <select id="cluster">
+        <option value="">Select your cluster</option>
+        <option value="Cluster A">Cluster A</option>
+        <option value="Cluster B">Cluster B</option>
+        <option value="Cluster C">Cluster C</option>
+        <option value="Cluster D">Cluster D</option>
+      </select><br>
+      <button onclick="login()">Start</button>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div id="main-section" style="display:none;">
+      <h2>Welcome, <span id="user-name"></span> 🌱</h2>
+      <p>Cluster: <span id="user-cluster"></span></p>
+
+      <div class="points-box">
+        Current Points: <span id="user-points">0</span>
+      </div>
+
+      <button onclick="donateOil()">Donate Oil +100 pts</button>
+      <p id="message" style="margin-top:10px; font-weight:bold;"></p>
+
+      <div class="rewards">
+        <h3>🎁 Rewards</h3>
+        <div class="reward-item">
+          Eco Soap Bar — 300 pts 
+          <button onclick="redeem(300, 'Eco Soap Bar')">Redeem</button>
+        </div>
+        <div class="reward-item">
+          Fuel Discount Ticket — 800 pts 
+          <button onclick="redeem(800, 'Fuel Discount Ticket')">Redeem</button>
+        </div>
+        <div class="reward-item">
+          Tote Bag — 500 pts 
+          <button onclick="redeem(500, 'Eco Tote Bag')">Redeem</button>
+        </div>
+      </div>
+
+      <div class="history">
+        <h3>🧾 Donation History</h3>
+        <ul id="donation-history"></ul>
+
+        <h3>🎉 Reward History</h3>
+        <ul id="reward-history"></ul>
+      </div>
+
+      <div class="leaderboard">
+        <h3>🏆 Leaderboard</h3>
+        <ul id="leaderboard-list"></ul>
+      </div>
+
+      <button onclick="resetAll()" class="reset-btn">Reset All</button>
+    </div>
+
+    <footer>
+      <p>🌎 Waste2Worth — Turning waste into impact.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
